@@ -12,7 +12,7 @@ public class DBConnectionUtil {
 
 	private static final String PASSWORD = "root123";
 
-	private static final String DRIVER = "com.mysql.jdbc.Driver";
+	private static final String DRIVER = "com.mysql.cj.jdbc.Driver";
 
 	private static Connection con;
 

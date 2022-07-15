@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Employee List</title>
 </head>
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
@@ -15,6 +15,7 @@
 <body>
 
 	<div class="container">
+	   <p>${message}</p>
        <button class = "btn btn-primary" onclick = "window.location.href='views/employee-add.jsp'">Add Employee</button>
 		<table border="1" class="table table-striped table-bordered">
 			<tr class="table-dark">
@@ -25,6 +26,7 @@
 				<th>Age</th>
 				<th>Gender</th>
 				<th>Hotel id</th>
+				<th>Action</th>
 			</tr>
 			<c:forEach items="${employeeList}" var="employees">
 				<tr>
@@ -35,6 +37,11 @@
 					<td>${employees.employeeAge}</td>
 					<td>${employees.employeeGender}</td>
 					<td>${employees.hotelId}</td>
+					<td>
+					   <a href = "${pageContext.request.contextPath}/EmployeeController?action=EDIT&id=${employees.employeeId}">Edit</a>
+					   |
+					   <a href = "${pageContext.request.contextPath}/EmployeeController?action=DELETE&id=${employees.employeeId}">DELETE</a>
+					</td>
 
 				</tr>
 			</c:forEach>

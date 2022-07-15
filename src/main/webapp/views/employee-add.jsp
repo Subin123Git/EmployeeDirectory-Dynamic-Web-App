@@ -13,15 +13,15 @@
 	crossorigin="anonymous">
 <body>
 	<div class="container">
-		<form action= "" method = "POST">
-			Enter the id : <input type="text" name="employeeid" /> <br>
-			Enter the Name : <input type="text" name="employeename" /> <br>
-			Enter the Contact No : <input type="text" name="contactno" /> <br>
-			Enter the Email id : <input type="text" name="emailid" /> <br>
-			Enter the Age : <input type="text" name="age" /> <br> Enter the
-			Gender : <input type="text" name="gender" /> <br> Enter the
-			Hotel id : <input type="text" name="hotelid" /> <br>
-			<button type="submit" class="btn btn-primary">Add Employee</button>
+		<form action= "${pageContext.request.contextPath}/EmployeeController" method = "POST">
+			Enter the Name : <input type="text" name="employeename" value = "${editEmployee.employeeName}"/> <br>
+			Enter the Contact No : <input type="text" name="contactno" value = "${editEmployee.employeeContactNumber}" /> <br>
+			Enter the Email id : <input type="text" name="emailid" value = "${editEmployee.employeeEmailId}" /> <br>
+			Enter the Age : <input type="text" name="age" value = "${editEmployee.employeeAge}"/> <br> 
+			Enter the Gender : <input type="text" name="gender" value = "${editEmployee.employeeGender}" /> <br> 
+			Enter the Hotel id : <input type="text" name="hotelid" value = "${editEmployee.hotelId}"/> <br>
+			<input type ="hidden" name = "employeeid" value = "${editEmployee.employeeId}"/>
+			<button type="submit" class="btn btn-primary">Save Employee</button>
 		</form>
 	</div>
 
